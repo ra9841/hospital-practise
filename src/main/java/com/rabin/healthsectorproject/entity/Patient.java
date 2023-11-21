@@ -51,7 +51,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString(exclude = "doctors")
 @Entity
-//@Table(name = "patient_tbl")
+@Table(name = "patient_tbl")
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -78,8 +78,8 @@ public class Patient {
     @Column(name = "patient_healthInsuranceName")
     private String healthInsuranceName;
 
-    @ManyToOne
-   // @JoinColumn(name = "doctor_epNumber")
-    private Doctor doctors;
+   // @ManyToOne
+    //@JoinColumn(name = "doctor_id")
+    //private Doctor doctors;
 
 }

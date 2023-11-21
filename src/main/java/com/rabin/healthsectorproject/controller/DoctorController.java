@@ -18,5 +18,10 @@ public class DoctorController {
         return ResponseEntity.ok(doctorService.savingDoctorRecord(doctorDto));
     }
 
+    @PutMapping("/{doctorId}/table/{patientId}")
+    public DoctorDto assigningPatientToDoctor(@PathVariable Long doctorId,@PathVariable Long patientId) throws Exception {
+        return doctorService.assigningPatientToDoctor(doctorId,patientId);
+    }
+
 
 }

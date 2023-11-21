@@ -26,7 +26,7 @@ import java.util.List;
 //    @Column(name = "doctor_epNumber" , nullable = false)
 //    private String doctorEPNumber;
 //
-//    @OneToMany(mappedBy = "doctors", cascade = CascadeType.ALL)
+//    @OneToMany(mappedBy = "doctors", cascade = CascadeType.ALL) //bidirectional one to many mapping
 //    private List<Patient> patients;
 //}
 @Data
@@ -47,7 +47,7 @@ public class Doctor {
     @Column(name = "doctor_epNumber" , nullable = false)
     private String doctorEPNumber;
 
-    @OneToMany(mappedBy = "doctors",cascade = CascadeType.ALL,fetch=FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER)//unidirectional one to many mapping
     @JoinTable(
             name = "doctor_patient",
             joinColumns = @JoinColumn(name = "doctor_id"),
